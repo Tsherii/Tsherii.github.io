@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+  
+  $crimson : crimson;
+  $black:#0d0d0d;
+  $light-bg:#1a1a1a;
+  $white:#fff;
+  $light-color:#aaa;
+  $box-shadow:0 .5rem 1rem rgba(0,0,0,.7);
+  
+  @mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap:1.5rem;
+  }
+  
+  html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+  
+    &::-webkit-scrollbar{
+      width: 1rem;;
+    }
+  
+    &::-webkit-scrollbar-track{
+      background: $black;
+    }
+  
+    &::-webkit-scrollbar-thumb{
+      background: $crimson;
+      border-radius: 5rem;
+    }
+  }
+  
+  body{
+    background: $black;
+    padding-bottom: 6.5rem;
+  }
+  
+  section{
+    padding:5rem 9%;
+  }
+  
+  .heading{
+    text-align: center;
+    font-size: 6vw;
+    color:$white;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  
+    span{
+      text-transform: uppercase;
+      color:$crimson;
+    }
+  }
+  
+  .btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: $crimson;
+    padding:.7rem;
+    font-size: 1.7rem;
+    color:$white;
+    padding-left: 2rem;
+  
+    i{
+      height: 4rem;
+      width: 4rem;
+      line-height: 4rem;
+      font-size: 1.7rem;
+      text-align: center;
+      background: $white;
+      color:$crimson;
+      border-radius: 50%;
+      margin-left: 1rem;
+      transition: .2s linear;
+    }
+  
+    &:hover i{
+      margin-left: 2rem;
+    }
+  }
+
+  .vid-gallery{
+
+    .box-container{
+      @include grid(31rem);
+  
+      .box{
+        text-align: center;
+        padding:2rem;
+        border-radius: .5rem;
+        background: $light-bg;
+        box-shadow: $box-shadow;
+  
+        &:hover .image img{
+          transform: scale(1.2);
+        }
+  
+        .image{
+          height: 25rem;
+          width:100%;
+          border-radius: .5rem;
+          overflow:hidden;
+  
+          img{
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+            transition: .2s linear;
+          }
+        }
+  
+        .content{
+  
+          .icons{
+            position: relative;
+            top:-1rem;
+            border-radius: .5rem;
+            padding:1.5rem;
+            display: inline-block;
+            background: $black;
+  
+            a{
+              font-size: 1.4rem;
+              margin:0 1rem;
+              color:$white;
+  
+              &:hover{
+                color:$crimson;
+              }
+  
+              i{
+                padding-right: .5rem;
+                color:$crimson;
+              }
+            }
+          }
+  
+          h3{
+            font-size: 2rem;
+            color:$white;
+            font-weight: normal;
+          }
+  
+          p{
+            font-size: 1.5rem;
+            color:$light-color;
+            padding:1rem 0;
+            line-height: 2;
+          }
+        }
+      }
+    }
+  }
+  
+//Section Area
+.custom-section {
+    width: inherit;
+    padding: 40px 0;
+    @media screen and (max-width: 991.98px){
+        flex-direction: column-reverse;
+    }
+    .col-lg-4 {
+        margin-top: 100px;
+        h2 {
+            font-weight: 700;
+            font-size: 63px;
+            color: #000;
+            margin-bottom: 0;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 64px;
+            color: #000;
+            line-height: 1;
+        }
+        p{
+            color: #000;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        a{
+            display: inline-block;
+            padding: 8px 22px;
+            color: #fff;
+            background-color: #1EA5F7;
+            border: 1px solid transparent;
+            margin-top: 60px;
+            text-decoration: none;
+            transition: .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+            &:hover {
+                color: #1EA5F7;
+                background-color: #fff;
+                border: 1px solid #1EA5F7;
+            }
+        }
+
+
+    }
+    .col-lg-8 {
+        img {
+            width: 100%;
+            position: absolute;
+            top: -14rem;
+            right: -11%;
+
+            @media screen and (max-width: 991.98px){
+                width: 100%;
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+        }    
+        
+        .animate-img {
+            img {
+                width: 118px;
+                position: absolute;
+                top: -13.5rem;
+                right: 2.9rem;
+            }
+        }
+    }
+}
